@@ -1,0 +1,8 @@
+/yarn/
+/configstore/
+/op/
+/iterm2/
+/raycast/
+/simple-update-notifier/
+*-backup.zip
+lazygit/state.yml
