@@ -3,6 +3,7 @@ return {
   dependencies = {
     "AckslD/nvim-neoclip.lua",
     "ThePrimeagen/harpoon",
+    "nvim-telescope/telescope-live-grep-args.nvim" ,
   },
   -- apply the config and additionally load fzf-native
   config = function(_, opts)
@@ -10,13 +11,16 @@ return {
     telescope.setup(opts)
     -- telescope.load_extension("harpoon")
     telescope.load_extension("neoclip")
+    telescope.load_extension("live_grep_args")
   end,
 
   opts = {
     defaults = {
       mappings = {                                                                                                                                                                  
         i = {                                                                                                                                                                         
-          ['<C-p>'] = require('telescope.actions.layout').toggle_preview                                                                                                            
+          ['<C-p>'] = require('telescope.actions.layout').toggle_preview,
+          ['<C-j>'] = require('telescope.actions').cycle_history_next,
+          ['<C-k>'] = require('telescope.actions').cycle_history_prev,
         },
       },
       preview = {                                                                                                                                                                          
@@ -33,9 +37,9 @@ return {
       },
     },
   },
-  -- keys = function()
-  --   return {
-  --     { "<leader>*", "<cmd>Telescope grep_string<cr>", { silent = true, desc = "Grep Word Under Cursor" } },
-  --   }
-  -- end,
+
+  keys = {
+    { "<leader>fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", desc = "Live Grep (args)" },
+    { "<leader>fc", '<cmd>lua require("telescope.builtin").live_grep({ glob_pattern = "!{spec, test}" })<CR>', desc = "Live Grep (code)" },
+  },
 }
