@@ -180,7 +180,7 @@ config.keys = {
   { key = 'm', mods = 'SHIFT|CTRL', action = act.Hide },
   { key = 'm', mods = 'SUPER', action = act.Hide },
   { key = 'n', mods = 'SHIFT|CTRL', action = act.SpawnWindow },
-  { key = 'n', mods = 'SUPER', action = act.SpawnWindow },
+  -- { key = 'n', mods = 'SUPER', action = act.SpawnWindow },
   { key = 'p', mods = 'SHIFT|CTRL', action = act.ActivateCommandPalette },
   { key = 'q', mods = 'SHIFT|CTRL', action = act.QuitApplication },
   { key = 'q', mods = 'SUPER', action = act.QuitApplication },
@@ -320,6 +320,15 @@ config.keys = {
     })
   ),
 
+
+  cmd_key(
+    "n",
+    act.Multiple({
+      act.SendKey({ key = "\x1b" }), -- escape
+      multiple_actions(":ene"),
+    })
+  ),
+
   cmd_key(".", multiple_actions(":ZenMode")),
   cmd_key("f", multiple_actions(":Grep")),
   cmd_key("P", multiple_actions(":GoToCommand")),
@@ -336,7 +345,8 @@ config.keys = {
   cmd_tmux_key("9", "9"),
   cmd_tmux_key("e", '"'),
   cmd_tmux_key("E", "%"),
-  cmd_tmux_key("n", "%"),
+  cmd_tmux_key("d", "%"),
+  cmd_tmux_key("D", '"'),
   cmd_tmux_key("N", '"'),
   cmd_tmux_key("G", "G"),
   cmd_tmux_key("g", "g"),
