@@ -316,7 +316,7 @@ config.keys = {
     "w",
     act.Multiple({
       act.SendKey({ key = "\x1b" }), -- escape
-      multiple_actions(":bd"),
+      multiple_actions(":BD!"),
     })
   ),
 
