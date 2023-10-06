@@ -224,9 +224,6 @@ vim.keymap.set("n", "<c-s-=>", "<cmd>vs<cr>", { desc = "New Split" })
 vim.keymap.set("n", "<c-=>", "<cmd>vs<cr>", { desc = "New Split" })
 vim.keymap.set("n", "<c-s-+>", "<cmd>vs<cr>", { desc = "New Split" })
 
-vim.keymap.set("n", "<leader>*", "<cmd>Telescope grep_string<cr>", { silent = true, desc = "Grep Word Under Cursor" })
-
--- when deleting, don't add that to the register
--- vim.keymap.set({"n", "v"}, "d", [["_d]])
--- vim.keymap.set({"n", "v"}, "c", [["_c]])
-
+local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+vim.keymap.set("n", "<leader>*", live_grep_args_shortcuts.grep_word_under_cursor, { desc = "Grep Word Under Cursor" })
+vim.keymap.set("v", "<leader>*", live_grep_args_shortcuts.grep_visual_selection, { desc = "Grep Word Visual Selection"})
