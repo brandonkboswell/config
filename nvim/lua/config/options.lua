@@ -5,3 +5,4 @@
 --
 --
 vim.g.gitblame_enabled = false
+vim.opt.wrap = true
