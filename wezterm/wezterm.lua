@@ -43,7 +43,7 @@ local function cmd_tmux_key(key, tmux_key)
 end
 
 local config = {
-	font_size = 16,
+  font_size = 16,
 
   window_padding = {
     left = 0,
@@ -52,12 +52,12 @@ local config = {
     bottom = 0
   },
 
-	send_composed_key_when_left_alt_is_pressed = true,
-	send_composed_key_when_right_alt_is_pressed = false,
-	adjust_window_size_when_changing_font_size = false,
-	enable_tab_bar = false,
-	native_macos_fullscreen_mode = false,
-	window_decorations = "RESIZE",
+  send_composed_key_when_left_alt_is_pressed = true,
+  send_composed_key_when_right_alt_is_pressed = false,
+  adjust_window_size_when_changing_font_size = false,
+  enable_tab_bar = false,
+  native_macos_fullscreen_mode = false,
+  window_decorations = "RESIZE",
 }
 
 -- config.window_background_opacity = 0.87
@@ -301,6 +301,14 @@ config.keys = {
     act.Multiple({
       act.SendKey({ key = "\x1b" }), -- escape
       multiple_actions(":w"),
+    })
+  ),
+
+  cmd_key(
+    "T",
+    act.Multiple({
+      act.SendKey({ key = "\x1b" }), -- escape
+      multiple_actions(":vs#"),
     })
   ),
 
