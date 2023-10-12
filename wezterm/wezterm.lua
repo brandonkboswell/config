@@ -43,7 +43,7 @@ local function cmd_tmux_key(key, tmux_key)
 end
 
 local config = {
-  font_size = 16,
+  font_size = 14,
 
   window_padding = {
     left = 0,
@@ -66,7 +66,7 @@ config.color_scheme = 'Monokai (base16)'
 
 -- Make the background match nvim
 config.colors = {
-  background = '#222222'
+  background = '#191919'
 }
 
 -- Keys
