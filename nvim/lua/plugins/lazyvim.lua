@@ -5,7 +5,7 @@ return {
       defaults = {
         -- autocmds = false,  -- works
         -- options = false,  -- does not work
-        keymaps = false,  -- works
+        -- keymaps = false,  -- works
       },
     },
   },
