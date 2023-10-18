@@ -26,6 +26,13 @@ vim.cmd([[
   noremap <silent> <c-\> :<C-U>TmuxNavigatePrevious<cr>
 ]])
 
+
+-- Bring Back the Visual Multi Keybinds that Conflict with Lazy
+vim.keymap.del("n", "<C-Up>")
+vim.keymap.del("n", "<C-Down>")
+vim.keymap.set("n", "<C-Up>", "<Plug>(VM-Add-Cursor-Up)")
+vim.keymap.set("n", "<C-Down>", "<Plug>(VM-Add-Cursor-Down)")
+
 -- THESE WERE CAUSING ISSUES WHERE LINES WOULD BE MOVED
 -- ACCIDENTALLY BASED ON PRESSING ESCAPE MULTIPLE TIMES
 --
