@@ -24,7 +24,7 @@ return {
           },
         },
         preview = {
-          hide_on_startup = false,
+          hide_on_startup = true,
         },
         sorting_strategy = "ascending",
         file_ignore_patterns = { ".git/", "node_modules", "vendor" },
