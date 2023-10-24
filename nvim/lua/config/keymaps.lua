@@ -21,7 +21,7 @@ vim.keymap.del("n", "<C-l>")
 vim.cmd([[
   noremap <silent> <c-h> :<C-U>TmuxNavigateLeft<cr>
   noremap <silent> <c-j> :<C-U>TmuxNavigateDown<cr>
-  noremap <silent> <c-k> :<C-U>TmuxNavigateUp<cr>
+  noremap <silent> <r-k> :<C-U>TmuxNavigateUp<cr>
   noremap <silent> <c-l> :<C-U>TmuxNavigateRight<cr>
   noremap <silent> <c-\> :<C-U>TmuxNavigatePrevious<cr>
 ]])
@@ -53,6 +53,8 @@ vim.cmd([[
   nnoremap <Leader>o o<Esc>0"_D
   nnoremap <Leader>O O<Esc>0"_D
 ]])
+
+-- vim.keymap.set("v", "s", "S")
 
 -- Stolen from Josh Medeski
 -- harpoon
