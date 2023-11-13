@@ -320,14 +320,13 @@ config.keys = {
     })
   ),
 
-  cmd_key(
-    "w",
-    act.Multiple({
-      act.SendKey({ key = "\x1b" }), -- escape
-      multiple_actions(":BD!"),
-    })
-  ),
-
+  -- cmd_key(
+  --   "w",
+  --   act.Multiple({
+  --     act.SendKey({ key = "\x1b" }), -- escape
+  --     multiple_actions(":bd!"),
+  --   })
+  -- ),
 
   cmd_key(
     "n",
@@ -363,6 +362,7 @@ config.keys = {
   cmd_tmux_key("o", "u"),
   cmd_tmux_key("t", "c"),
   cmd_tmux_key("W", "x"),
+  cmd_tmux_key("w", "x"),
   cmd_tmux_key("z", "z"),
 }
 
